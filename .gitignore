@@ -1,0 +1,59 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+MemoryCaptures/
+Recordings/
+
+# Asset meta files (tracked olanlar hariç)
+# NOT: .meta dosyalarını SİLME — Unity bağlantıları bunlarda
+*.pidb.meta
+*.pdb.meta
+
+# Unity Asset Store tools
+[Aa]ssets/AssetStoreTools*
+
+# IDE
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+.idea/
+*.DS_Store
+
+# JetBrains Rider
+.idea/
+
+# Visual Studio
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Crash reports
+sysinfo.txt
+crashlytics-build.properties
+
+# Unity Cloud Build
+UnityCloudBuildAutoConfig.json
+```
+
+> ⚠️ **Kritik:** `Assets/` ve `Assets/**/*.meta` dosyalarını **asla** ignore etme. Unity referansları `.meta` dosyalarında tutulur, silinirse prefab bağlantıları kopar.
+

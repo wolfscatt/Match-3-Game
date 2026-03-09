@@ -8,15 +8,6 @@ Clean Architecture (Domain / Application / Infrastructure / Presentation)
 - **Pattern:** State Machine + EventBus + Object Pool
 - **Tests:** EditMode unit tests (NUnit)
 
-## Features
-- [ ] Core match detection (3+, L/T shape)
-- [ ] Special tiles (Bomb, Rocket H/V, Color Bomb)
-- [ ] Goal system (collect X of color)
-- [ ] Move limit
-- [ ] Blocked cells
-- [ ] Object pooling
-- [ ] Level configs via ScriptableObject
-
 ## Project Structure
 Assets/Scripts/
 ├── Domain/          # Pure C# — zero Unity dependency

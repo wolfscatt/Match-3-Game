@@ -21,8 +21,14 @@ Assets/Scripts/
 │   ├── DTOs/        # SwapResult
 │   ├── Services/    # GoalService, ScoreService, MoveService
 │   ├── StateMachine/# GameStateMachine + States
-│   └── UseCases/    # SwapTilesUseCase
-├── Infrastructure/  # Unity implementations (audio, input, pool, config)
+│   └── UseCases/    # SwapTilesUseCase, InitializeBoardUseCase
+├── Infrastructure/  # Unity implementations
+│   ├── Audio/       # AudioService, AudioConfig
+│   ├── Config/      # LevelConfig, TileViewConfig
+│   ├── DI/          # GameInstaller (VContainer LifetimeScope)
+│   ├── Factories/   # TileFactory, TileViewConfig
+│   ├── Input/       # InputHandler (Unity Input System)
+│   └── Pool/        # ObjectPool<T>
 └── Presentation/    # Views, animations, UI
 
 ## Features
@@ -36,17 +42,23 @@ Assets/Scripts/
 - [x] Shuffle service — deadlock detection + Fisher-Yates
 - [x] Game state machine — Idle / Swap / Match / Fall / Win / Lose
 - [x] SwapTilesUseCase — adjacency validation + match check
+- [x] InitializeBoardUseCase — board generate + service init
 - [x] Goal system — track X of color
 - [x] Score system — base score + combo multiplier
 - [x] Move limit system
 - [x] EventBus — type-safe, loose coupling
+- [x] VContainer DI — GameInstaller with full dependency graph
+- [x] ObjectPool<T> — generic MonoBehaviour pooling
+- [x] InputHandler — Unity Input System (mouse + touch)
+- [x] AudioService — BGM loop + SFX oneshot
+- [x] LevelConfig — ScriptableObject driven level data
+- [x] TileFactory — pool-backed tile view creation
 
 ### 🔄 In Progress
-- [ ] VContainer DI setup (GameInstaller)
-- [ ] Infrastructure layer (Config, Pool, Input, Audio)
+- [ ] Presentation layer (TileView, BoardView, BoardController)
+- [ ] Animation system
 
 ### 📋 Planned
-- [ ] Presentation layer (TileView, BoardView, animations)
 - [ ] UI — HUD, Win/Lose popups
 - [ ] VFX — particle effects
 - [ ] EditMode unit tests
@@ -62,7 +74,8 @@ Assets/Scripts/
 |-------|--------|-------------|
 | Phase 1 | ✅ Done | Domain layer foundation |
 | Phase 2 | ✅ Done | Domain rules + Application layer |
-| Phase 3 | 🔄 WIP  | Infrastructure + VContainer DI |
-| Phase 4 | 📋 Todo | Presentation + Unity layer |
+| Phase 3 | ✅ Done | Infrastructure + VContainer DI |
+| Phase 4 | 🔄 WIP  | Presentation + Unity layer |
 | Phase 5 | 📋 Todo | UI + VFX |
 | Phase 6 | 📋 Todo | Unit tests |
+

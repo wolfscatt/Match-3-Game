@@ -7,7 +7,6 @@ namespace Match3Game.Domain.Common
     /// Bir level hedefini tanımlar.
     /// Hangi renkten kaç adet kırılması gerektiğini tutar.
     /// </summary>
-    [System.Serializable] // LevelConfig ScriptableObject'te serialize edilebilsin
     public class GoalData
     {
         public TileColor TargetColor    { get; }

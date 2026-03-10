@@ -6,6 +6,7 @@ A production-quality Match-3 puzzle game built with Unity 6.
 Clean Architecture (Domain / Application / Infrastructure / Presentation)
 - **DI:** VContainer
 - **Pattern:** State Machine + EventBus + Object Pool
+- **Animations:** DOTween
 - **Tests:** EditMode unit tests (NUnit)
 
 ## Project Structure
@@ -30,6 +31,12 @@ Assets/Scripts/
 │   ├── Input/       # InputHandler (Unity Input System)
 │   └── Pool/        # ObjectPool<T>
 └── Presentation/    # Views, animations, UI
+    ├── Animation/   # AnimationSequencer
+    ├── Board/       # TileView, BoardView, BoardController
+    ├── HUD/         # (Phase 5)
+    ├── Popups/      # (Phase 5)
+    └── VFX/         # VFXService
+
 
 ## Features
 ### ✅ Implemented
@@ -53,21 +60,25 @@ Assets/Scripts/
 - [x] AudioService — BGM loop + SFX oneshot
 - [x] LevelConfig — ScriptableObject driven level data
 - [x] TileFactory — pool-backed tile view creation
+- [x] TileView — DOTween animations (swap, match, fall, spawn, special upgrade)
+- [x] BoardView — grid layout, world↔grid position conversion
+- [x] BoardController — input → usecase → animation game loop
+- [x] AnimationSequencer — chained animation helper
+- [x] VFXService — EventBus-driven particle effects
 
 ### 🔄 In Progress
-- [ ] Presentation layer (TileView, BoardView, BoardController)
-- [ ] Animation system
+- [ ] UI — HUD (move counter, goal tracker, score)
+- [ ] Popups — Win / Lose / Pause
 
 ### 📋 Planned
-- [ ] UI — HUD, Win/Lose popups
-- [ ] VFX — particle effects
 - [ ] EditMode unit tests
 - [ ] Level ScriptableObjects (5 sample levels)
 
 ## Setup
 1. Unity 6 (6000.x LTS)
 2. Install VContainer via Package Manager
-3. Open `Assets/Scenes/Gameplay.unity`
+3. Install DOTween via Package Manager
+4. Open `Assets/Scenes/Gameplay.unity`
 
 ## Development Progress
 | Phase | Status | Description |
@@ -75,7 +86,6 @@ Assets/Scripts/
 | Phase 1 | ✅ Done | Domain layer foundation |
 | Phase 2 | ✅ Done | Domain rules + Application layer |
 | Phase 3 | ✅ Done | Infrastructure + VContainer DI |
-| Phase 4 | 🔄 WIP  | Presentation + Unity layer |
-| Phase 5 | 📋 Todo | UI + VFX |
+| Phase 4 | ✅ Done | Presentation + Unity layer |
+| Phase 5 | 🔄 WIP  | UI + VFX |
 | Phase 6 | 📋 Todo | Unit tests |
-

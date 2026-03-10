@@ -1,5 +1,6 @@
 using Match3Game.Domain.Tiles;
 using Match3Game.Infrastructure.Pool;
+using Match3Game.Presentation.Board;
 using UnityEngine;
 
 namespace Match3Game.Infrastructure.Factories

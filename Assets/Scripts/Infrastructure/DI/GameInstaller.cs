@@ -11,6 +11,7 @@ using Match3Game.Infrastructure.Config;
 using Match3Game.Infrastructure.Factories;
 using Match3Game.Infrastructure.Input;
 using Match3Game.Infrastructure.Pool;
+using Match3Game.Presentation.Board;
 using System;
 using UnityEngine;
 using VContainer;

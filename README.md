@@ -20,7 +20,7 @@ Assets/Scripts/
 │   └── Tiles/       # TileModel, TileColor, TileSpecialType
 ├── Application/     # Use cases, state machine, services
 │   ├── DTOs/        # SwapResult
-│   ├── Services/    # GoalService, ScoreService, MoveService
+│   ├── Services/    # GoalService, ScoreService, MoveService, SceneService
 │   ├── StateMachine/# GameStateMachine + States
 │   └── UseCases/    # SwapTilesUseCase, InitializeBoardUseCase
 ├── Infrastructure/  # Unity implementations
@@ -33,8 +33,8 @@ Assets/Scripts/
 └── Presentation/    # Views, animations, UI
     ├── Animation/   # AnimationSequencer
     ├── Board/       # TileView, BoardView, BoardController
-    ├── HUD/         # (Phase 5)
-    ├── Popups/      # (Phase 5)
+    ├── HUD/         # HUDView, GoalEntryUI, UIManager
+    ├── Popups/      # BasePopup, WinPopup, LosePopup, PausePopup
     └── VFX/         # VFXService
 
 
@@ -65,10 +65,14 @@ Assets/Scripts/
 - [x] BoardController — input → usecase → animation game loop
 - [x] AnimationSequencer — chained animation helper
 - [x] VFXService — EventBus-driven particle effects
-
-### 🔄 In Progress
-- [ ] UI — HUD (move counter, goal tracker, score)
-- [ ] Popups — Win / Lose / Pause
+- [x] HUDView — move counter, animated score, goal tracker
+- [x] GoalEntryUI — per-goal progress with completion animation
+- [x] UIManager — coordinates all UI elements
+- [x] BasePopup — DOTween show/hide base class
+- [x] WinPopup — level complete screen with star animation
+- [x] LosePopup — out of moves screen
+- [x] PausePopup — pause menu with audio sliders
+- [x] SceneService — scene transition management
 
 ### 📋 Planned
 - [ ] EditMode unit tests
@@ -87,5 +91,5 @@ Assets/Scripts/
 | Phase 2 | ✅ Done | Domain rules + Application layer |
 | Phase 3 | ✅ Done | Infrastructure + VContainer DI |
 | Phase 4 | ✅ Done | Presentation + Unity layer |
-| Phase 5 | 🔄 WIP  | UI + VFX |
-| Phase 6 | 📋 Todo | Unit tests |
+| Phase 5 | ✅ Done | UI + VFX |
+| Phase 6 | 🔄 WIP  | Unit tests |

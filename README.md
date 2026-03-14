@@ -30,12 +30,16 @@ Assets/Scripts/
 │   ├── Factories/   # TileFactory, TileViewConfig
 │   ├── Input/       # InputHandler (Unity Input System)
 │   └── Pool/        # ObjectPool<T>
-└── Presentation/    # Views, animations, UI
-    ├── Animation/   # AnimationSequencer
-    ├── Board/       # TileView, BoardView, BoardController
-    ├── HUD/         # HUDView, GoalEntryUI, UIManager
-    ├── Popups/      # BasePopup, WinPopup, LosePopup, PausePopup
-    └── VFX/         # VFXService
+├── Presentation/    # Views, animations, UI
+│   ├── Animation/   # AnimationSequencer
+│   ├── Board/       # TileView, BoardView, BoardController
+│   ├── HUD/         # HUDView, GoalEntryUI, UIManager
+│   ├── Popups/      # BasePopup, WinPopup, LosePopup, PausePopup
+│   └── VFX/         # VFXService
+└── Tests/
+    ├── Unit/        # BoardModelTests, MatchFinderTests,
+    │                # GravitySystemTests, ShuffleServiceTests
+    └── Integration/ # SwapTilesUseCaseTests
 
 
 ## Features
@@ -73,10 +77,17 @@ Assets/Scripts/
 - [x] LosePopup — out of moves screen
 - [x] PausePopup — pause menu with audio sliders
 - [x] SceneService — scene transition management
+- [x] 36 EditMode unit & integration tests — zero Unity dependencies in Unit layer
 
-### 📋 Planned
-- [ ] EditMode unit tests
-- [ ] Level ScriptableObjects (5 sample levels)
+## Tests
+| Suite | Tests | Coverage |
+|-------|-------|----------|
+| BoardModelTests | 10 | Bounds, CRUD, swap, cell types |
+| MatchFinderTests | 9 | 3/4/5-match, L/T shape, special spawn |
+| GravitySystemTests | 7 | Fall, column order, fill |
+| ShuffleServiceTests | 4 | Deadlock detection + resolution |
+| SwapTilesUseCaseTests | 8 | Valid/invalid swap, events, move consumption |
+| **Total** | **38** | |
 
 ## Setup
 1. Unity 6 (6000.x LTS)
@@ -92,4 +103,4 @@ Assets/Scripts/
 | Phase 3 | ✅ Done | Infrastructure + VContainer DI |
 | Phase 4 | ✅ Done | Presentation + Unity layer |
 | Phase 5 | ✅ Done | UI + VFX |
-| Phase 6 | 🔄 WIP  | Unit tests |
+| Phase 6 | ✅ Done | Unit & integration tests |
